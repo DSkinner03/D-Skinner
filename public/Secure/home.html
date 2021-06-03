@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/Assets/Style/Buttonandinputs.css">
     <script src="/auth.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/Assets/Style/Main.css">
+    <script src="https://d-skinner.com/Assets/Script/Main.js" charset="utf-8"></script>
 
       <script type="text/javascript">
       /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
@@ -21,6 +22,21 @@
         x.className = "topnav";
       }
       }
+
+
+      firebase.auth().onAuthStateChanged(function() {
+          const user = firebase.auth().currentUser
+          const username = document.getElementById("username")
+          const email = document.getElementById('email')
+          const verified = document.getElementById('verified')
+
+          verified.innerHTML = user.emailVerified
+          username.innerHTML = user.displayName
+          email.innerHTML = user.email
+});
+
+
+window.onload = CheckAuth()
       </script>
         </head>
       <body>
@@ -36,7 +52,22 @@
           <i class="fa fa-bars"></i>
         </a>
       </div>
-
+<br>
+<br>
+<h1>D-Skinner</h1>
+<br>
+<div id="UserInfo">
+  <h4>User Information</h4>
+  <br>
+  <h5>Name: </p>
+<p id="username"></p>
+<br>
+<h5>Email: </p>
+<p id="email"></p>
+<br>
+<h5>Verification Status</h5>
+<p id="verified"></p>
+</div>
 
 
     </body>
