@@ -1,9 +1,12 @@
 function CheckAuth() {
-  firebase.auth().onAuthStateChanged(function(user) {
 
-    // Check if there is a user signed in and who
-    if (user) {
-    //User is signed in
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    var uid = user.uid;
+    // ...
     console.log('User Signed In Successfully.')
     var user = firebase.auth().currentUser ;
 var name, email, uid, emailVerified;
@@ -28,18 +31,15 @@ if (user != null) {
 });
 
 
-
-}
-
-
-
   } else {
-    //not signed in
+    // User is signed out
+    // ...
     alert(`Uh Oh! \nYou are not signed in. As part of our security check, you must sign in.`)
     window.location.href="https://d-skinner.com/Secure/login.html"
   }
-
 });
+
+
 
 
 }
@@ -61,5 +61,5 @@ function Analytics(){
   const analytics = firebase.analytics();
 
   firebase.analytics().logEvent('notification_received');
-  
+
 }

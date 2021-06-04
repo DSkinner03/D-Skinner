@@ -65,15 +65,29 @@ function ResetPass(){
 };
 
 function NewUser(){
-  var user = firebase.auth().currentUser;
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      // ...
+      alert(`User has been created successfully. \n:)`)
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ..
+      document.getElementById('message').innerHTML = "⚠️ " + errorMessage;
+      alert(`Uh oh, an error has occurred. \nReport this to the support team so it can be fixed ASAP. /n:(`)
+    });
 
-  user.updateProfile({
-
-  }).then(function() {
-    // Update successful.
-  }).catch(function(error) {
-    // An error happened.
-  });
+    if (!email || email.length==0) {
+        document.getElementById('message').innerHTML = '⚠️ | Enter your email!'
+        return;
+    }
+    if (!password || password.length==0) {
+        document.getElementById('message').innerHTML = '⚠️ | Enter a password!'
+        return;
+    }
 }
 
 function SignOut(){
@@ -83,5 +97,6 @@ function SignOut(){
   document.getElementById('message').innerHTML = '✅  | Signed out successfully'
 }).catch((error) => {
   // An error happened.
+  alert(`⚠️ | You are NOT signed out! \nSomething went wrong in the sign out process, please try again.`)
 });
 }

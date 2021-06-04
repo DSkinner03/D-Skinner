@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+
+<!-- Adjust to users device -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Insert fonts -->
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<!-- Get Scripts and CSS-->
+
+<script src="https://d-skinner.com/Secure/auth.js" charset="utf-8"></script>
+<script src="https://d-skinner.com/Access/Scripts/Body.js" charset="utf-8"></script>
+<script src="https://d-skinner.com/Access/Scripts/Head.js" charset="utf-8"></script>
+<link rel="stylesheet" href="https://d-skinner.com/Access/Style/Main.css">
+<link rel="stylesheet" href="https://d-skinner.com/Access/Style/Additional.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<!-- Load Firebase stuff -->
+
+<script src="/__/firebase/8.6.4/firebase-app-check.js"></script>
+
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="/__/firebase/8.2.2/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="/__/firebase/8.2.2/firebase-auth.js"></script>
+<script src="/__/firebase/8.2.2/firebase-firestore.js"></script>
+
+  <!-- Previously loaded Firebase SDKs -->
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+
+  <!-- Title -->
+
+    <title>Access</title>
+
+<!-- Authentication Check -->
+
+<script type="text/javascript">
+  window.onload = CheckAuth()
+</script>
+
+    <!-- End of header <-->
+  </head>
+  <body>
+
+    <div class="topnav" id="myTopnav">
+      <a href="https://d-skinner.com/Secure/Access/index.html" >Status Panel</a>
+      <a href="https://d-skinner.com/Secure/Access/nusr.html">New User Panel</a>
+      <a href="https://d-skinner.com/Secure/Access/usermgmt.html" >User Management Panel</a>
+      <a href="https://d-skinner.com/Secure/Access/Security.html" class="active">Security Panel</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+<br>
+<h1>Security Panel</h1>
+<br>
+
+  </body>
+</html>
