@@ -7,6 +7,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <title>D-Skinner Home</title>
     <script src="/Assets/Script/Main.js" charset="utf-8"></script>
+<script src="/__/firebase/8.6.4/firebase-app-check.js"></script>
 <link rel="stylesheet" href="/Assets/Style/Buttonandinputs.css">
     <script src="https://d-skinner.com/Secure/auth.js" charset="utf-8"></script>
     <link rel="stylesheet" href="/Assets/Style/Main.css">
@@ -24,19 +25,11 @@
       }
 
 
-      firebase.auth().onAuthStateChanged(function() {
-          const user = firebase.auth().currentUser
-          const username = document.getElementById("username")
-          const email = document.getElementById('email')
-          const verified = document.getElementById('verified')
-
-          verified.innerHTML = user.emailVerified
-          username.innerHTML = user.displayName
-          email.innerHTML = user.email
-});
 
 
 window.onload = CheckAuth()
+window.onload = AppCheck()
+window.onload = Analytics()
       </script>
         </head>
       <body>

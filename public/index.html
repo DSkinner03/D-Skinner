@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <script src="/auth.js" charset="utf-8"></script>
+<script src="/__/firebase/8.6.4/firebase-app-check.js"></script>
     <link rel="stylesheet" href="/Assets/Style/Main.css">
+    <script src="https://d-skinner.com/Assets/Script/Main.css" charset="utf-8"></script>
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -25,6 +27,10 @@
   <!-- Initialize Firebase -->
   <script src="/__/firebase/init.js"></script>
 
+<script type="text/javascript">
+  window.onload = Analytics()
+  window.onload = AppCheck()
+</script>
 
 <script type="text/javascript">
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
