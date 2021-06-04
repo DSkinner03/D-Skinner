@@ -1,5 +1,5 @@
 
-var emailAddress = email
+
 var message = document.getElementById('message')
 
 function Login(){
