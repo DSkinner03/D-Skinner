@@ -2,6 +2,10 @@ Center{
   text-align: center;
 }
 
+section{
+  text-align: center;
+}
+
 body{
     font-family: 'Open Sans', sans-serif;
     color: black;

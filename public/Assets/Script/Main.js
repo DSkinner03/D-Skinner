@@ -63,3 +63,10 @@ function Analytics(){
   firebase.analytics().logEvent('notification_received');
 
 }
+
+
+function OpenOrder(){
+  var OrderID = document.getElementById("OrderNo").value;
+
+  window.location.href = `https://d-skinner.com/Secure/Order/${OrderID}.html`
+}

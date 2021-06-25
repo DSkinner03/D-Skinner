@@ -21,6 +21,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
        } else {
         // User is signed out
         // ...
+        alert(`WARNING - YOU ARE NOT SIGNED IN.`)
       }
     });
 
@@ -91,12 +92,14 @@ function NewUser(){
 }
 
 function SignOut(){
-  firebase.auth().signOut().then(() => {
-  // Sign-out successful.
-  window.location.href="https://d-skinner.com/Secure/login.html"
-  document.getElementById('message').innerHTML = '✅  | Signed out successfully'
-}).catch((error) => {
-  // An error happened.
-  alert(`⚠️ | You are NOT signed out! \nSomething went wrong in the sign out process, please try again.`)
-});
+// [START auth_sign_out]
+ firebase.auth().signOut().then(() => {
+   // Sign-out successful.
+   window.location.href="https://d-skinner.com/Secure/login.html"
+   document.getElementById('message').innerHTML = '✅  | Signed out successfully'
+ }).catch((error) => {
+   // An error happened.
+     alert(`⚠️ | You are NOT signed out! \nSomething went wrong in the sign out process, please try again.`)
+ });
+ // [END auth_sign_out]
 }
